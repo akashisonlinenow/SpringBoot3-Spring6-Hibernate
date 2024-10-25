@@ -11,6 +11,20 @@
         <br><br>
         Last Name: <input type="text" th:field="*{lastName}"/>
         <br><br>
+        Country:
+        <select th:field="*{country}">
+            <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry }"/>
+        </select>
+        <br><br>
+        Favourite Prog Lang:
+        <input type="radio" th:field="*{favoriteLanguage}" th:each="tempLang : ${languages}" th:value="${tempLang}" th:text="${tempLang}"/>
+        <br><br>
+        Favorite OS:
+<!--        <input type="checkbox" th:field="*{favoriteOs}" th:value="macOS">macOS</input>-->
+<!--        <input type="checkbox" th:field="*{favoriteOs}" th:value="Linux">Linux</input>-->
+<!--        <input type="checkbox" th:field="*{favoriteOs}" th:value="Windows">Windows</input>-->
+            <input type="checkbox" th:field="*{favoriteOs}" th:each="tempOs : ${systems}" th:value="${tempOs}" th:text="${tempOs}"/>
+        <br><br>
         <input type="submit" value="Submit"/>
     </form>
 </body>
