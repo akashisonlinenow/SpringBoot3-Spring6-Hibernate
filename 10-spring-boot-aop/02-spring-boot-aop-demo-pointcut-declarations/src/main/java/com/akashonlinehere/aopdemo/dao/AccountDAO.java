@@ -2,7 +2,13 @@ package com.akashonlinehere.aopdemo.dao;
 
 import com.akashonlinehere.aopdemo.Account;
 
+import java.util.List;
+
 public interface AccountDAO {
+
+    // add a new method: findAccounts()
+    List<Account> findAccounts();
+
     void addAccount(Account theAccount, boolean vipFlag);
 
     boolean doWork();
